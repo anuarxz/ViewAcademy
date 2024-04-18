@@ -132,7 +132,7 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
-embeddings_model = CohereEmbeddings(cohere_api_key="IcJEoDxiTNGTRklU7gbA6T3KDYpiEskRim0NRTET")
+embeddings_model = CohereEmbeddings(cohere_api_key="apiKey")
 
 def save_uploaded_file(uploaded_file: UploadFile) -> str:
     # Directorio donde se guardarán los archivos subidos
