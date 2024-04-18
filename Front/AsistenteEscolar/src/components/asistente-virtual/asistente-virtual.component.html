@@ -1,0 +1,72 @@
+<section style="padding: 4rem;" class="align-items-center min-vh-100">
+
+    <div id="chat" style="padding-bottom: 110px">
+
+        <div *ngIf="respuesta" style="background-color: #ffffffa1; backdrop-filter: blur(40px);"
+            class="d-flex p-4 rounded justify-content-start mb-4">
+            <img src="https://ui-avatars.com/api/?name=Asistente&background=2c4d94&color=fff"
+                style="width: 40px; height: 40px;" class="object-cover h-8 w-8 rounded-circle" alt="">
+            <div class="reply w-100 ps-4 text-black" [innerHTML]="respuesta"></div>
+        </div>
+
+        <div class="d-flex flex-column" *ngFor="let msg of mensajes; let i = index">
+            <div style="    background-color: #0000006e; backdrop-filter: blur(71px);"
+                class="mb-4 d-flex p-4 rounded justify-content-start">
+                <img src="https://ui-avatars.com/api/?name=Usuario" style="width: 40px; height: 40px;"
+                    class="object-cover rounded-circle" alt="">
+                <div class="message w-100 px-4 rounded">{{ msg }}</div>
+            </div>
+            <div *ngIf="respuestas[i]" style="background-color: #ffffffa1; backdrop-filter: blur(40px);"
+                class="mb-4 d-flex p-4 rounded justify-content-start">
+                <img src="https://ui-avatars.com/api/?name=Asistente&background=2c4d94&color=fff"
+                    style="width: 40px; height: 40px;" class="object-cover h-8 w-8 rounded-circle" alt="">
+                <div class="reply w-100 ps-4 text-black" [innerHTML]="respuestas[i]"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="d-flex">
+        <div style="position: fixed; left: 0px; right: 0px; bottom: 0px" class="mx-auto">
+            <div class="pb-5 px-5">
+                <div class="mb-3 d-flex justify-content-between">
+                    <button type="button" (click)="this.authService.goToMainPage()"
+                        class="btn btn-sm btn-dark rounded-pill shadow"><i class="fa-solid fa-arrow-left"></i> Volver al menú principal</button>
+                    <div>
+                        <button [disabled]="isLoading" *ngIf="this.authService.rol==='alumno'" (click)="promptGeneral()" type="button"
+                            class="btn btn-sm btn-secondary rounded-pill me-2 shadow"><i class="fa-solid fa-border-all"></i>
+                            General</button>
+                        <button [disabled]="isLoading" *ngIf="this.authService.rol==='alumno'" (click)="promptIngles()" type="button"
+                            class="btn btn-sm btn-info rounded-pill me-2 shadow"><i class="fa-solid fa-language"></i>
+                            Inglés</button>
+                        <button [disabled]="isLoading" *ngIf="this.authService.rol==='alumno'" (click)="promptLengua()" type="button"
+                            class="btn btn-sm btn-success rounded-pill me-2 shadow"><i class="fa-brands fa-readme"></i>
+                            Lengua</button>
+                        <button [disabled]="isLoading" *ngIf="this.authService.rol==='alumno'" (click)="promptHistoria()" type="button"
+                            class="btn btn-sm btn-warning rounded-pill me-2 shadow"><i class="fa-solid fa-landmark"></i>
+                            Historia</button>
+                        <button [disabled]="isLoading" *ngIf="this.authService.rol==='alumno'" (click)="promptMatematicas()" type="button"
+                            class="btn btn-sm btn-danger rounded-pill shadow"><i class="fa-solid fa-square-root-variable"></i>
+                            Matemáticas</button>
+                    </div>
+                </div>
+                <div class="d-flex align-items-end">
+                    <div class="d-inline w-100">
+                        <textarea maxlength="735" (keydown)="handleEnterKey($event)" [(ngModel)]="mensaje"
+                            placeholder="Escribe aquí..." style="border-radius: 0.75rem;"
+                            class="textarea removeStyle bg-light w-100 border border-light"></textarea>
+                    </div>
+                    <div class="d-inline">
+                        <button *ngIf="!isLoading" (click)="enviarMensaje(mensaje)" class="btn btn-primary btn-circle ms-2 pe-auto shadow">
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                        <div *ngIf="isLoading" class="spinner-border text-light ms-2" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

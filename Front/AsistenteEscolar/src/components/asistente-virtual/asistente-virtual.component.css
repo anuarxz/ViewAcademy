@@ -1,0 +1,100 @@
+menu,
+ol,
+ul {
+    list-style: revert !important;
+    margin: revert !important;
+    padding: revert !important;
+}
+
+pre {
+    background-color: black;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    white-space: pre-wrap;
+    /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+}
+
+* {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+}
+
+.textarea {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 14px 20px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 50px;
+    line-height: 20px;
+}
+
+.textarea[contenteditable]:empty::before {
+    content: "Escribe aquí...";
+    pointer-events: none;
+    color: gray;
+}
+
+.removeStyle {
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+    resize: none !important;
+}
+
+.message,
+.reply {
+    color: white;
+}
+
+
+.btn-circle {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+  
+  .btn-circle i {
+    position: relative;
+    top: -2px;
+    left: -1px;
+  }
+  
+  .btn-circle-sm {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-circle-lg {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 1.1rem;
+  }
+  
+  .btn-circle-xl {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 1.3rem;
+  }

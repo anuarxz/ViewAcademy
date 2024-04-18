@@ -1,0 +1,43 @@
+<section class="pt-5 pb-5 mt-0 min-vh-100">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h3 class="fs-6 mb-2 text-secondary text-center text-uppercase text-white texto-sombreado">Servicios</h3>
+                <h2 class="display-5 mb-5 fw-bold text-white text-center texto-sombreado">¿Qué servicio desea utilizar?</h2>
+                <hr class="w-50 mx-auto mb-5 mb-xl-9 border-light">
+            </div>
+        </div>
+    </div>
+
+    <div class="container overflow-hidden">
+        <div class="row justify-content-center gy-4 gy-xl-0">
+            <div *ngIf="this.authService.rol==='alumno' || this.authService.rol==='profesor'" (click)="goToAsistenteVirtual()" class="col-12 col-sm-6 col-xl-3">
+              <app-service-card title="Asistente virtual" description="Encuentra ayuda sobre consultas relacionadas con las distintas materias"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='alumno'" (click)="goToGenerarResumen()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Generar resumen" description="Crea resúmenes de materiales extensos, facilitando así el proceso de estudio y comprensión de conceptos clave"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='alumno'" (click)="goChatPDF()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="ChatPDF" description="El servicio permite cargar archivos PDF y hacer preguntas sobre su contenido a través de inteligencia artificial."></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='profesor'" (click)="goToEvaluacionCompetencias()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Evaluación de competencias" description="Mide el progreso y el desempeño de los alumnos para entender mejor sus fortalezas y áreas de mejora"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='profesor'" (click)="goToSeleccionarAlumno()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Seleccionar alumno" description="Identifica y elige a un alumno específico entre su grupo de forma aleatoria"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='profesor'" (click)="goToDetectorPlagios()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Detector de plagios" description="Identifica similitudes entre textos y fuentes externas, ayudando a detectar posibles casos de plagio"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='admin'" (click)="goToVisualizarAlumnos()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Visualizar alumnos" description="Revisa información detallada sobre los alumnos registrados en el sistema"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='admin'" (click)="goToVisualizarProfesores()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Visualizar profesores" description="Revisa información detallada sobre los profesores registrados en el sistema"></app-service-card>
+            </div>
+            <div *ngIf="this.authService.rol==='admin'" (click)="goToVerEstadisticas()" class="col-12 col-sm-6 col-xl-3">
+                <app-service-card title="Ver estadísticas" description="Realiza análisis y métricas sobre diversos aspectos del sistema educativo"></app-service-card>
+            </div>
+          </div>
+    </div>
+</section>

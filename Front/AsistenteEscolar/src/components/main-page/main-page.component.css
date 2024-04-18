@@ -1,0 +1,11 @@
+.div-pequeno {
+    width: 45%;
+    height: 100px;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .texto-sombreado {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }

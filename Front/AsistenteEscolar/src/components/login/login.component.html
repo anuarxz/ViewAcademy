@@ -1,0 +1,51 @@
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex min-vh-100">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center d-flex-row h-100">
+      <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 h-50 ">
+        <div style="border-radius: 20px;" class="card border-0 shadow-sm">
+          <div class="card shadow-lg">
+            <div class="card-body p-5">
+              <h1 class="mb-4 text-center">
+                <img style="max-width: 75%;" src="../../assets/images/logo.svg" />
+              </h1>
+              <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate="" autocomplete="off">
+                <div class="mb-3">
+                  <label class="mb-2 text-muted" for="email">Correo electrónico</label>
+                  <input type="text" id="email" name="email" [(ngModel)]="email" type="email"
+                    class="form-control rounded-pill" required autofocus>
+                  <div class="invalid-feedback">
+                    Email is invalid
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="mb-2 w-100">
+                    <label class="text-muted" for="password">Contraseña</label>
+                  </div>
+                  <input input type="password" id="password" name="password" [(ngModel)]="password" id="password"
+                    type="password" class="form-control rounded-pill required">
+                  <div class="invalid-feedback">
+                    Password is required
+                  </div>
+
+                </div>
+                <!-- Mensaje de error del servidor -->
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                  {{ errorMessage }}
+                </div>
+
+                <div class="d-flex align-items-center">
+
+                  <button type="submit" class="btn btn-primary ms-auto rounded-pill">
+                    Iniciar sesión
+                  </button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

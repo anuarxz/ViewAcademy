@@ -1,0 +1,53 @@
+<section class="pt-5 pb-5 mt-0 align-items-center d-flex min-vh-100">
+ <div class="container-fluid">
+    <div class="row justify-content-center align-items-center d-flex-row h-100">
+      <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9 h-50 ">
+        <div style="border-radius: 20px;" class="card border-0 shadow-sm">
+          <div class="card shadow-lg">
+
+
+            <div class="card-body p-5">
+              <h1 class="fs-4 card-title fw-bold mb-4">Detector de plagio</h1>
+              <form class="needs-validation" novalidate="" autocomplete="off">
+                <div class="mb-3">
+                  <label for="pdfFile1" class="mb-2 text-muted">Seleccionar primer archivo PDF:</label>
+                  <input type="file" id="pdfFile1" name="pdfFile1" accept=".pdf" (change)="onFileSelected1($event)" class="form-control rounded-pill" required autofocus>
+                  <div class="invalid-feedback">
+                    Tipo de documento inválido
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="pdfFile2" class="mb-2 text-muted">Seleccionar segundo archivo PDF:</label>
+                  <input type="file" id="pdfFile2" name="pdfFile2" accept=".pdf" (change)="onFileSelected2($event)" class="form-control rounded-pill" required autofocus>
+                  <div class="invalid-feedback">
+                    Tipo de documento inválido
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="button" (click)="onSubmit()" class="btn btn-primary rounded-pill text-center mt-4 mb-5" [disabled]="!filesSelected">Calcular plagio</button>
+                </div>
+              </form>
+              
+              
+                          <div [innerHTML]="plagioResult"></div>
+            </div>
+
+            
+          </div>
+        </div>
+
+        <div class="container mt-3">
+          <div class="row">
+              <div class="col">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-primary rounded-pill text-center" (click)="this.authService.goToMainPage()">Volver al menú principal</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </div>
+      
+    </div>
+  </div>
+</section>

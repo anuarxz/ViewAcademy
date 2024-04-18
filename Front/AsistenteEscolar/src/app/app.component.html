@@ -1,0 +1,9 @@
+<nav class="navbar fixed-top navbar-dark pe-none">
+    <div class="container-fluid">
+        <span class="navbar-brand text-white"></span>
+        <a *ngIf="authService.session" href="#" (click)="authService.logout" class="btn btn-danger btn-circle m-1 pe-auto"><i
+                class="fa-solid fa-power-off"></i></a>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
