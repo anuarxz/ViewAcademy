@@ -4,8 +4,10 @@
   <img src="/Front/AsistenteEscolar/src/assets/images/logo.svg" alt="Logo">
 </p>
 
-Viewacademy es una solución integral para simplificar la gestión académica tanto para profesores como para alumnos en cualquier entorno educativo.
+📝 Se trata de una aplicación web enfocada en la IA Generativa y los diferentes usos que le podemos dar, en este caso de un Asistente Escolar que nos ayudará con temas relacionados con la educación, como asistente virtual de diferentes materias, calcular el plagio que hay entre dos archivos, preguntarle sobre archivos pdf, generar resumen y ver estadísticas entre otros.
 
-Con Viewacademy, los docentes pueden optimizar su tiempo y recursos al gestionar fácilmente sus clases desde una plataforma centralizada y fácil de usar. ViewAcademy ofrece herramientas intuitivas que permiten a los profesores concentrarse en lo más importante: la enseñanza.
+📐 Hay 3 diferentes tipos de usuarios: alumnos, profesores y admin. Cada uno tendrá una pantalla de inicio diferente ya que podrán acceder a diferentes secciones dependiendo del tipo de usuario.
 
-Para los alumnos, Viewacademy proporciona un espacio organizado donde acceder a materiales de apoyo. Los estudiantes tienen todo lo que necesitan para mantenerse al día con sus clases y maximizar su rendimiento académico.
+🎯 A nivel de lenguajes, en el front se ha utilizado Angular junto con Bootstrap para la maquetación, en el back se utilizó NodeJS (Express para el servidor y la api de OpenAI) junto con Python (se usó sólo para calcular el plagio utilizando LangChain junto a la api de Cohere y para el servidor FastApi). Por último, para la base de datos MongoDB y para las estadísticas PowerBI.
+
+✨ También se han utilizado herramientas como git, github, entre otros.
